@@ -1,10 +1,20 @@
-# Node.js & Passport Login
+# LoginCASD
 
-This is a user login and registration app using Node.js, Express, Passport, Mongoose, EJS and some other packages.
+Foi construída uma página intermediária, que leva acesso à área do usuário ou do admin.
+
+### Version: 1.0.0
+
+Nessa versão foi construída uma página de login em Express EJS, e que será utilizada para ser uma página intermediária entre o primeiro contato do usuário e a página de inscrição.
+
+Assim, um usuário fará primeiramente seu cadastro, e após isso poderá acessar a Dashboard, onde ele poderá ver suas inscrições, se inscrever, atualizar dados, etc... Tornando o sistema mais seguro e prático.
+
+Já se o login for realizado por um admin, a página o redirecionará para a página de admin já criada.
 
 ### Version: 2.0.0
 
-### Usage
+Para a próxima versão, faltará integrar esse sistema de login com o que já foi feito pelo Leitinho, bem como melhorar a página do dashboard.
+
+### Uso
 
 ```sh
 $ npm install
@@ -12,12 +22,10 @@ $ npm install
 
 ```sh
 $ npm start
-# Or run with Nodemon
-$ npm run dev
 
 # Visit http://localhost:5000
 ```
 
 ### MongoDB
 
-Open "config/keys.js" and add your MongoDB URI, local or Atlas
+Conectada a uma Cloud provisória, a fim de realizar os testes iniciais necessários.
