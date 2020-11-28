@@ -1,0 +1,50 @@
+<div class="row mt-5">
+  <div class="col-md-6 m-auto">
+    <div class="card card-body">
+      <div class="container">
+        <div align="center">
+          <a class="brand"
+            ><img
+              src="https://i0.wp.com/cursosantosdumont.org.br/wp-content/uploads/2020/03/CASD.png?fit=600%2C211&ssl=1"
+              width="250px"
+          /></a>
+        </div>
+        <br />
+        <h1 class="text-center mb-3">
+          <i
+            class="fas fa-sign-in-alt"
+            style="font-size: 36px; color: #f9b342"
+          ></i>
+          <font color="#3192B3"><font face="Montserrat">Entrar</font></font>
+        </h1>
+        <% include ./partials/messages %>
+        <form action="/users/login" method="POST">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Seu Email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">Senha</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Sua Senha"
+            />
+          </div>
+          <button type="submit" class="btn btn-info btn-block">Login</button>
+        </form>
+        <p class="lead mt-4">
+          Ainda não possui uma conta?
+          <a href="/users/register">Registrar</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
