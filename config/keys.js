@@ -1,5 +1,5 @@
 dbPassword =
-  "mongodb+srv://admin:admin@logincasd.u41fo.mongodb.net/LoginCASD?retryWrites=true&w=majority";
+  "mongodb+srv://duduita:miguel12@vestibulinhobd.k00ha.mongodb.net/VestibulinhoBD?retryWrites=true&w=majority";
 
 module.exports = {
   mongoURI: dbPassword,
