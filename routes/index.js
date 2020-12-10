@@ -15,13 +15,26 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log("First function call : ", docs);
+      //console.log("First function call : ", docs);
       var a = docs;
     }
-    res.render("dashboard", {
-      user: req.user,
-      docs: a,
-    });
+    CandidateStatusModel.find(
+      { _id: docs[1].candidateStatus },
+      function (err, docs2) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("First function call : ", docs2);
+          var b = docs2;
+        }
+
+        res.render("dashboard", {
+          user: req.user,
+          docs: a,
+          docs2: b,
+        });
+      }
+    );
   });
 });
 

@@ -23,12 +23,12 @@
     <thead>
       <tr>
         <th scope="col"></th>
-        <th scope="col"><font color="#3192B3">Processo Seletivo</font></th>
-        <th scope="col"><font color="#3192B3">Nome do Candidato</font></th>
-        <th scope="col"><font color="#3192B3">Situação da Inscrição</font></th>
-        <th scope="col"><font color="#3192B3">Solicitação de isenção</font></th>
-        <th scope="col"><font color="#3192B3">Informações sobre a prova</font></th>
-        <th scope="col"><font color="#3192B3">Sala de Prova</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Processo Seletivo</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Nome do Candidato</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Situação da Inscrição</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Solicitação de isenção</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Informações sobre a prova</font></th>
+        <th scope="col"><font face="Montserrat" color="#3192B3">Sala de Prova</font></th>
       </tr>
       <font color="#706F6F"></font>
     </thead>
@@ -37,10 +37,18 @@
         <th scope="row"><%= i %></th>
          <td><font color="#706F6F"><%= docs[i].selectionProcess %></font></td>
          <td><font color="#706F6F"><%= docs[i].name %></font></td>
-         <td><font color="#706F6F"><%= docs[i].rg %></font></td>
-         <td><font color="#706F6F"><%= docs[i].candidateNumber %></font></td>
-         <td><font color="#706F6F"><%= docs[i].candidateNumber %></font></td>
-         <td><font color="#706F6F"><%= docs[i].candidateNumber %></font></td>
+         <td><font color="#706F6F"><% if(docs2[0].registrationStatus){ %>
+          Confirmada
+        <% } else{ %>  
+          Não Confirmada
+       <% } %></font></td>
+         <td><font color="#706F6F"><% if(docs2[0].exemptionStatus == "notRequested"){ %>
+          Não Solicitada
+        <% } else{ %>  
+          Solicitada
+       <% } %></font></td>
+         <td><font color="#706F6F">A prova teórica será realizada no dia <b> 16 de novembro</b> às <b>18:41.</b> Mais informações podem ser encontradas no nosso site e nas redes sociais.</font></td>
+         <td><font color="#706F6F">Não divulgado</font></td>
        </tr>
     <% } %>
   </table>
