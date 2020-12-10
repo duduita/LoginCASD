@@ -45,9 +45,9 @@ router.post("/register", (req, res) => {
       password2,
     });
   } else {
-    User.findOne({ email: email, CPF: CPF }).then((user) => {
+    User.findOne({ CPF: CPF }).then((user) => {
       if (user) {
-        errors.push({ msg: "Email ou CPF já existentes" });
+        errors.push({ msg: "CPF já existente" });
         res.render("register", {
           errors,
           name,
