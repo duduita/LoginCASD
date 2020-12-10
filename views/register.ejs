@@ -42,6 +42,17 @@
             />
           </div>
           <div class="form-group">
+            <label for="CPF">CPF</label>
+            <input
+              type="CPF"
+              id="CPF"
+              name="CPF"
+              class="form-control"
+              placeholder="Seu CPF"
+              value="<%= typeof CPF != 'undefined' ? CPF : '' %>"
+            />
+          </div>
+          <div class="form-group">
             <label for="password">Senha</label>
             <input
               type="password"

@@ -16,10 +16,10 @@ router.get("/register", forwardAuthenticated, (req, res) =>
 
 // Register
 router.post("/register", (req, res) => {
-  const { name, email, password, password2 } = req.body;
+  const { name, email, CPF, password, password2 } = req.body;
   let errors = [];
 
-  if (!name || !email || !password || !password2) {
+  if (!name || !email || !CPF || !password || !password2) {
     errors.push({ msg: "Por favor, insira todos os campos" });
   }
 
@@ -31,22 +31,28 @@ router.post("/register", (req, res) => {
     errors.push({ msg: "A senha deve ter pelo menos 6 caracteres" });
   }
 
+  if (CPF.length < 11) {
+    errors.push({ msg: "CPF inválido" });
+  }
+
   if (errors.length > 0) {
     res.render("register", {
       errors,
       name,
       email,
+      CPF,
       password,
       password2,
     });
   } else {
-    User.findOne({ email: email }).then((user) => {
+    User.findOne({ email: email, CPF: CPF }).then((user) => {
       if (user) {
-        errors.push({ msg: "Email já existente" });
+        errors.push({ msg: "Email ou CPF já existentes" });
         res.render("register", {
           errors,
           name,
           email,
+          CPF,
           password,
           password2,
         });
@@ -54,6 +60,7 @@ router.post("/register", (req, res) => {
         const newUser = new User({
           name,
           email,
+          CPF,
           password,
         });
 
